@@ -121,11 +121,9 @@ body {
 
 /* עיצוב הסרגל התחתון */
 .footer {
-    
     background-color: #383636;
     color: #fff;
     padding: 20px;
-    
 }
 
 .footer a {
@@ -134,13 +132,13 @@ body {
 }
 
 .footer a:hover {
-    
     text-decoration: underline;
 }
 
 .footer-text {
     margin: 5px 0;
 }
+
 /* עיצוב הכיתוב מתחת לכפתורים */
 .category-text {
     font-size: 28px; /* הגדלת הגודל */
@@ -148,4 +146,26 @@ body {
     margin-top: 10px;
     color: white; /* צבע טקסט מתחת לכפתור */
     text-align: center; /* יישור הכיתוב למרכז */
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    .button-container {
+        flex-direction: column; /* הכפתורים יופיעו אחד מעל השני במובייל */
+        gap: 20px;
+    }
+
+    .custom-btn {
+        width: 100%; /* הכפתור יתפרש על כל הרוחב */
+        height: auto; /* התאמה לגובה אוטומטי */
+    }
+
+    .custom-btn img {
+        width: 100px;
+        height: 100px;
+    }
 }
