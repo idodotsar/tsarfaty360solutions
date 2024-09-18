@@ -1,114 +1,151 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* עיצוב בסיסי לעמודים */
 body {
     font-family: Arial, sans-serif;
     background-color: #93a3a8;
+    margin: 0;
+    padding: 0;
     text-align: center;
+    color: white; /* צבע טקסט כללי לבן */
 }
 
-header {
+/* עיצוב הכותרת */
+.header {
     background-color: #fff;
-    padding: 10px 0;
+    padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo-container {
+.logo {
+    width: 350px;
+}
+
+.lead {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* עיצוב התוכן הראשי של עמודים */
+.main-content {
+    padding: 40px;
+    margin-bottom: 50px; 
+}
+
+/* עיצוב הטקסט בעמוד העסקים */
+.intro-text h2 {
+    font-size: 28px;
+    color: white; /* כותרות בעמוד העסקים בלבן */
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    font-size: 18px;
+    color: white; /* טקסט הפסקה בעמוד העסקים בלבן */
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* עיצוב הכפתורים בעמוד העסקים */
+.button-container {
+    margin-top: 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 20px; /* ריווח בין הכפתורים */
+    flex-wrap: wrap; /* מאפשר שהכפתורים יהיו על שורה אחת */
 }
 
-.logo-container img {
-    width: 350px; /* לוגו בגודל גדול */
-}
-
-h1 {
-    font-size: 15px;
-    margin: 10px 0;
-    color: hsl(172, 20%, 43%);
-}
-
-h2 {
+.custom-btn {
+    background-color: #343a40;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
     font-size: 18px;
-    color: #888;
-}
-
-p {
-    font-size: 20px;
-    color: #888;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-.footer-text {
-    font-size: 15px;
-    color: #cdd1d1;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-
-main {
+    transition: background-color 0.3s, transform 0.3s; /* הוספת אנימציה לגדילה */
+    width: 180px; /* גודל קבוע לכפתורים */
+    height: 220px; /* גודל קבוע כולל לתמונות וכיתוב */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 30px; /* מרווח בין הקטגוריות */
-    padding: 30px;
+}
+
+.custom-btn img {
+    width: 130px; /* הגדלת התמונות */
+    height: 130px;
+    object-fit: contain; /* התאמה לתמונה בלי לחתוך */
+    margin-bottom: 10px; /* ריווח בין התמונה לכיתוב */
+}
+
+.custom-btn p {
+    margin: 0;
+    font-size: 16px; /* גודל כיתוב ברור יותר */
+}
+
+.custom-btn:hover {
+    background-color: #495057;
+    transform: scale(1.05); /* הגדלה של הכפתור בעת hover */
+}
+
+/* עיצוב כפתורי הקטגוריות בעמוד הראשי */
+.category-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
 }
 
 .category {
-    width: 90%; /* הקוביות גדולות יותר */
-    max-width: 500px;
+    display: inline-block;
+    width: 350px; /* הגדלת הכפתורים */
+    height: 350px; /* הגדלת הכפתורים */
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease; /* אפקט מעבר */
 }
 
-.category img {
+.category-img {
     width: 100%;
-    height: auto;
-    border-radius: 10px; /* עיצוב עגול יותר לתמונה */
+    height: 100%;
+    object-fit: contain; /* התאמת התמונה לכפתור בלי לחתוך אותה */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    
 }
 
-.category:hover {
-    transform: scale(1.05); /* אפקט של הגדלה בלחיצה */
+.category-img:hover {
+    transform: scale(1.05);
 }
 
-footer {
+/* עיצוב הסרגל התחתון */
+.footer {
+    
     background-color: #383636;
     color: #fff;
     padding: 20px;
-    text-align: left;
-    margin-top: 40px;
     
 }
 
-footer a {
+.footer a {
     color: #bdd9df;
     text-decoration: none;
-    font-size: 15px;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.footer a:hover {
     
+    text-decoration: underline;
 }
 
-footer p {
+.footer-text {
     margin: 5px 0;
 }
-
-@media (min-width: 768px) {
-    main {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .category {
-        width: 45%;
-    }
+/* עיצוב הכיתוב מתחת לכפתורים */
+.category-text {
+    font-size: 28px; /* הגדלת הגודל */
+    font-weight: bold; /* כיתוב בולט יותר */
+    margin-top: 10px;
+    color: white; /* צבע טקסט מתחת לכפתור */
+    text-align: center; /* יישור הכיתוב למרכז */
 }
