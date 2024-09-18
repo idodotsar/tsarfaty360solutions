@@ -45,13 +45,13 @@ body {
     margin-bottom: 40px;
 }
 
-/* עיצוב הכפתורים בעמוד העסקים */
+/* עיצוב הכפתורים בעמודי העסקים וההנדסה */
 .button-container {
     margin-top: 30px;
     display: flex;
     justify-content: center;
     gap: 20px; /* ריווח בין הכפתורים */
-    flex-wrap: wrap; /* מאפשר שהכפתורים יהיו על שורה אחת */
+    flex-wrap: wrap;
 }
 
 .custom-btn {
@@ -64,9 +64,9 @@ body {
     display: inline-block;
     text-align: center;
     font-size: 18px;
-    transition: background-color 0.3s, transform 0.3s; /* הוספת אנימציה לגדילה */
-    width: 180px; /* גודל קבוע לכפתורים */
-    height: 220px; /* גודל קבוע כולל לתמונות וכיתוב */
+    transition: background-color 0.3s, transform 0.3s;
+    width: 180px; 
+    height: 220px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -74,20 +74,20 @@ body {
 }
 
 .custom-btn img {
-    width: 130px; /* הגדלת התמונות */
+    width: 130px; 
     height: 130px;
-    object-fit: contain; /* התאמה לתמונה בלי לחתוך */
-    margin-bottom: 10px; /* ריווח בין התמונה לכיתוב */
+    object-fit: contain; 
+    margin-bottom: 10px;
 }
 
 .custom-btn p {
     margin: 0;
-    font-size: 16px; /* גודל כיתוב ברור יותר */
+    font-size: 16px;
 }
 
 .custom-btn:hover {
     background-color: #495057;
-    transform: scale(1.05); /* הגדלה של הכפתור בעת hover */
+    transform: scale(1.05);
 }
 
 /* עיצוב כפתורי הקטגוריות בעמוד הראשי */
@@ -96,23 +96,23 @@ body {
     justify-content: center;
     gap: 40px;
     margin-top: 30px;
+    flex-wrap: wrap; /* מאפשר גמישות בכפתורים */
 }
 
 .category {
     display: inline-block;
-    width: 350px; /* הגדלת הכפתורים */
-    height: 350px; /* הגדלת הכפתורים */
+    width: 350px; /* גודל הכפתורים */
+    height: 350px; 
     text-align: center;
 }
 
 .category-img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* התאמת התמונה לכפתור בלי לחתוך אותה */
+    object-fit: contain; 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    
 }
 
 .category-img:hover {
@@ -150,22 +150,40 @@ body {
 
 /* Media Queries for Mobile Devices */
 @media (max-width: 768px) {
-    .main-content {
-        padding: 20px;
+    /* עמוד ראשי - כפתורים אחד מתחת לשני במובייל */
+    .category-container {
+        flex-direction: column; /* כפתורים יוצגו אחד מתחת לשני במובייל */
+        gap: 20px; /* ריווח קטן יותר בין הכפתורים במובייל */
     }
 
+    .category {
+        width: 90%; /* הכפתור יתפוס את רוב רוחב המסך */
+        height: auto; /* גובה הכפתור יותאם אוטומטית */
+    }
+
+    .category-img {
+        width: 100%; 
+        height: auto;
+    }
+
+    /* עמודי עסקים והנדסה */
     .button-container {
-        flex-direction: column; /* הכפתורים יופיעו אחד מעל השני במובייל */
+        flex-direction: column; /* כפתורים בעמודות במובייל */
+        align-items: center;
         gap: 20px;
     }
 
     .custom-btn {
-        width: 100%; /* הכפתור יתפרש על כל הרוחב */
-        height: auto; /* התאמה לגובה אוטומטי */
+        width: 90%; /* הכפתור יתפוס את רוב רוחב המסך */
+        height: auto; /* התאמה אוטומטית לגובה */
     }
 
     .custom-btn img {
-        width: 100px;
+        width: 100px; /* גודל קטן יותר לתמונות במובייל */
         height: 100px;
+    }
+
+    .custom-btn p {
+        font-size: 14px; /* טקסט קטן יותר במובייל */
     }
 }
