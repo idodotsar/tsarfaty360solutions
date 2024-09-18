@@ -10,7 +10,7 @@ body {
 
 /* עיצוב הכותרת */
 .header {
-    background-color: #fff;
+    background-color: #ffffff; /* צבע רקע לבן טהור */
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
